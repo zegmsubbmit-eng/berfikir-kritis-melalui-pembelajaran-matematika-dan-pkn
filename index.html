@@ -920,25 +920,23 @@
   }
 
   const SISTEM = "Kamu AI Copilot. Jawaban sopan, singkat, bahasa Indonesia, cocok untuk siswa SMP. Utamakan isi website berikut jika relevan.\n";
+  // Ganti dengan alamat Worker kamu setelah diterbitkan, misalnya:
+  // https://ai-copilot-nama-kamu.workers.dev
+  const AI_ENDPOINT = "";
 
   async function gptOpenAI(pertanyaan, konteks) {
-    const key = (window.OPENAI_API_KEY || localStorage.getItem("openai_api_key") || "").trim();
-    if (!key) return null;
-    const res = await fetch("https://api.openai.com/v1/chat/completions", {
+    if (!AI_ENDPOINT) return null;
+    const res = await fetch(AI_ENDPOINT, {
       method: "POST",
-      headers: { "Content-Type": "application/json", Authorization: "Bearer " + key },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo",
-        temperature: 0.2,
-        messages: [
-          { role: "system", content: SISTEM + konteks },
-          { role: "user", content: pertanyaan }
-        ]
+        question: pertanyaan,
+        context: konteks
       })
     });
     if (!res.ok) return null;
     const data = await res.json();
-    return (data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content || "").trim();
+    return (data.answer || "").trim();
   }
 
   async function jawabanAI(pertanyaan) {
