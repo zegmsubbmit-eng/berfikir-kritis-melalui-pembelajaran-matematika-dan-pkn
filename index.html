@@ -1882,4 +1882,109 @@
 
 </body>
 </html>
-```
+
+    .menu-panel a.tautan-unduh {
+      border: 0;
+      padding: 16px 0 0;
+      margin: 24px 0 0;
+      word-break: break-all;
+      text-decoration: underline;
+      font-size: 13px;
+    }
+    .poster-asli { width: 100%; height: auto; display: block; }
+    .kutipan-motivasi {
+      border-left: 5px solid var(--navy);
+      background: var(--tan);
+      padding: 16px 18px;
+      margin: 0 0 16px;
+    }
+    .kutipan-motivasi p { margin: 0 0 8px; font-style: italic; }
+    .kutipan-motivasi .siapa {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-style: normal;
+      color: var(--navy);
+    }
+    .menu-panel a.biru {
+      background: var(--navy);
+      color: #fff;
+      border-color: var(--navy);
+    }
+      <a
+        class="tautan-unduh"
+        href="https://github.com/zegmsubbmit-eng/layanan-interaktif-gabungan-matematika-dan-pkn-untuk-melatih-berfikir-kritis-murid/archive/refs/heads/main.zip"
+      >
+        https://github.com/zegmsubbmit-eng/layanan-interaktif-gabungan-matematika-dan-pkn-untuk-melatih-berfikir-kritis-murid/archive/refs/heads/main.zip
+      </a>
+              <a
+          class="kartu navy"
+          href="#solusi"
+          data-page="solusi"
+          style="margin-top:12px;"
+        >
+
+          <span class="sekolah">
+            Layanan 3
+          </span>
+
+          <strong
+            style="display:block;font-size:20px;margin:8px 0;"
+          >
+            Solusi Penghambat Proses Pembelajaran
+          </strong>
+
+          Poster istirahat tepat waktu,
+          game kerja sama tim,
+          poster kebersihan, dan motivasi.
+
+        </a>
+            <div class="page" id="page-solusi">
+      <header class="cover">
+        <div class="sekolah">Solusi Penghambat Proses Pembelajaran</div>
+        <h1>Solusi Penghambat Proses Pembelajaran</h1>
+        <p class="sub">Poster, game kerja sama tim, dan motivasi.</p>
+      </header>
+      <section>
+        <p class="nomor">Poster</p>
+        <h2>Poster pentingnya beristirahat di awal waktu</h2>
+        <img class="poster-asli" src="poster-istirahat.png" alt="Poster pentingnya beristirahat di awal waktu" />
+      </section>
+      <section>
+        <p class="nomor">Game kerja sama tim</p>
+        <h2>Lintasan Matematika dan PKN</h2>
+        <p>Game kerja sama tim. Bisa dimainkan di dalam halaman ini atau dibuka di tab baru.</p>
+        <div style="border:2px dashed var(--navy);background:var(--kertas);padding:10px;">
+          <iframe title="Game kerja sama tim Lintasan Matematika dan PKN" src="https://zegmsubbmit.my.canva.site/" allowfullscreen loading="lazy"></iframe>
+          <p>
+            <a class="tombol" href="https://zegmsubbmit.my.canva.site/" target="_blank" rel="noopener">Buka game di tab baru</a>
+          </p>
+        </div>
+      </section>
+      <section>
+        <p class="nomor">Poster</p>
+        <h2>Poster pentingnya menjaga kebersihan</h2>
+        <img class="poster-asli" src="poster-kebersihan.jpg" alt="Poster pentingnya menjaga kebersihan" />
+      </section>
+      <section>
+        <p class="nomor">Motivasi</p>
+        <h2>Motivasi</h2>
+        <div class="kutipan-motivasi">
+          <p>“Tidak perlu kata - kata hanya perly aksi nyata”.</p>
+          <div class="siapa">— Agung Satrio</div>
+        </div>
+        <div class="kutipan-motivasi">
+          <p>“Hidup itu seperti roda, kadang di atas kadang di omongin”.</p>
+          <div class="siapa">— Razaan A.R.</div>
+        </div>
+      </section>
+      <a class="kembali" href="#beranda" data-page="beranda">Kembali ke beranda</a>
+    </div>
+        const pages = {
+      beranda: document.getElementById("page-beranda"),
+      materi: document.getElementById("page-materi"),
+      angket: document.getElementById("page-angket"),
+      solusi: document.getElementById("page-solusi")
+    };
+          if (hash === "solusi") {
+        return "solusi";
+      }
