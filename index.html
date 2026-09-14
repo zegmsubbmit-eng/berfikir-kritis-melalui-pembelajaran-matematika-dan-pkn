@@ -1,10 +1,13 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#1e2a4a" />
+
   <title>Berfikir Kritis Melalui Pembelajaran Matematika dan PKN</title>
+
   <style>
     :root {
       --merah: #9b1c1c;
@@ -18,14 +21,22 @@
       --hijau: #2f5d3a;
       --tan: #efe6d6;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       background: var(--kertas);
       color: var(--teks);
       font: 17px/1.6 Georgia, "Times New Roman", serif;
     }
+
     .topbar {
       position: sticky;
       top: 0;
@@ -33,6 +44,7 @@
       background: var(--putih);
       border-bottom: 1px solid var(--garis);
     }
+
     .topbar-in {
       max-width: 820px;
       margin: 0 auto;
@@ -41,6 +53,7 @@
       gap: 12px;
       padding: 8px 12px;
     }
+
     .burger {
       width: 44px;
       height: 44px;
@@ -53,12 +66,14 @@
       gap: 6px;
       cursor: pointer;
     }
+
     .burger span {
       display: block;
       width: 20px;
       height: 2px;
       background: var(--navy);
     }
+
     .top-label {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 11px;
@@ -66,6 +81,7 @@
       text-transform: uppercase;
       color: var(--navy);
     }
+
     .menu-bg {
       position: fixed;
       inset: 0;
@@ -73,7 +89,11 @@
       z-index: 50;
       display: none;
     }
-    .menu-bg.open { display: block; }
+
+    .menu-bg.open {
+      display: block;
+    }
+
     .menu-panel {
       width: min(92vw, 360px);
       height: 100%;
@@ -82,6 +102,7 @@
       padding: 24px;
       overflow: auto;
     }
+
     .menu-panel a {
       display: block;
       text-decoration: none;
@@ -91,24 +112,34 @@
       color: var(--navy);
       font-family: Arial, Helvetica, sans-serif;
     }
+
     .menu-panel a.utama {
       background: var(--navy);
       color: var(--putih);
       border-color: var(--navy);
     }
+
     .wrap {
       max-width: 820px;
       margin: 0 auto;
       padding: 24px 16px 64px;
     }
-    .page { display: none; }
-    .page.on { display: block; }
+
+    .page {
+      display: none;
+    }
+
+    .page.on {
+      display: block;
+    }
+
     header.cover {
       border: 3px solid var(--navy);
       background: var(--putih);
       padding: 28px 22px;
       text-align: center;
     }
+
     .sekolah {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
@@ -116,19 +147,26 @@
       text-transform: uppercase;
       color: var(--navy);
     }
+
     h1 {
       font-size: 30px;
       line-height: 1.25;
       margin: 12px 0 8px;
       color: var(--navy);
     }
-    .sub { color: var(--lembut); margin: 0 0 8px; }
+
+    .sub {
+      color: var(--lembut);
+      margin: 0 0 8px;
+    }
+
     section {
       background: var(--putih);
       border: 1px solid var(--garis);
       padding: 22px 20px;
       margin: 18px 0 0;
     }
+
     .nomor {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
@@ -137,10 +175,29 @@
       color: var(--merah);
       margin: 0 0 6px;
     }
-    h2 { font-size: 24px; margin: 0 0 12px; color: var(--navy); }
-    h3 { font-size: 18px; margin: 0 0 8px; color: var(--navy); }
-    p { margin: 0 0 12px; }
-    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    h2 {
+      font-size: 24px;
+      margin: 0 0 12px;
+      color: var(--navy);
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 0 0 8px;
+      color: var(--navy);
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    .grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
     .kartu {
       border: 1px solid var(--garis);
       padding: 12px;
@@ -148,12 +205,36 @@
       color: inherit;
       display: block;
     }
-    .kartu.navy { background: var(--navy); color: var(--putih); }
-    .kartu.navy .sekolah { color: #efe6d6; }
-    .dua { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 8px; }
-    .kotak { border: 1px solid var(--garis); padding: 12px; }
-    .kotak.mtk { border-left: 5px solid var(--biru); }
-    .kotak.pkn { border-left: 5px solid var(--hijau); }
+
+    .kartu.navy {
+      background: var(--navy);
+      color: var(--putih);
+    }
+
+    .kartu.navy .sekolah {
+      color: #efe6d6;
+    }
+
+    .dua {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 8px;
+    }
+
+    .kotak {
+      border: 1px solid var(--garis);
+      padding: 12px;
+    }
+
+    .kotak.mtk {
+      border-left: 5px solid var(--biru);
+    }
+
+    .kotak.pkn {
+      border-left: 5px solid var(--hijau);
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -161,13 +242,19 @@
       font-size: 14px;
       margin: 10px 0 14px;
     }
-    th, td {
+
+    th,
+    td {
       border: 1px solid var(--garis);
       padding: 8px;
       text-align: left;
       vertical-align: top;
     }
-    th { background: var(--tan); }
+
+    th {
+      background: var(--tan);
+    }
+
     .rumus {
       font-family: Arial, Helvetica, sans-serif;
       background: var(--tan);
@@ -175,6 +262,7 @@
       text-align: center;
       margin: 10px 0 14px;
     }
+
     .chips {
       display: flex;
       flex-wrap: wrap;
@@ -183,6 +271,7 @@
       font-family: Arial, Helvetica, sans-serif;
       font-size: 13px;
     }
+
     .chips a {
       color: var(--navy);
       text-decoration: none;
@@ -190,12 +279,14 @@
       background: var(--putih);
       padding: 6px 10px;
     }
+
     iframe {
       width: 100%;
       height: 640px;
       border: 1px solid var(--garis);
       background: #fff;
     }
+
     .tombol {
       display: inline-block;
       font-family: Arial, Helvetica, sans-serif;
@@ -205,6 +296,7 @@
       padding: 10px 14px;
       margin-top: 10px;
     }
+
     .kembali {
       display: block;
       text-align: center;
@@ -213,6 +305,7 @@
       font-size: 14px;
       color: var(--navy);
     }
+
     footer {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 13px;
@@ -220,15 +313,36 @@
       text-align: center;
       margin-top: 28px;
     }
+
     .caption {
       font-family: Arial, Helvetica, sans-serif;
       font-size: 12px;
       color: var(--lembut);
     }
-    .bar-row { margin: 0 0 12px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
-    .bar-lab { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 4px; }
-    .bar-track { height: 20px; border: 1px solid var(--garis); background: var(--kertas); }
-    .bar-fill { height: 100%; }
+
+    .bar-row {
+      margin: 0 0 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+    }
+
+    .bar-lab {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .bar-track {
+      height: 20px;
+      border: 1px solid var(--garis);
+      background: var(--kertas);
+    }
+
+    .bar-fill {
+      height: 100%;
+    }
+
     .tutup {
       margin-top: 16px;
       font-family: Arial, Helvetica, sans-serif;
@@ -239,240 +353,304 @@
       cursor: pointer;
     }
 
-    /* Widget chat bergaya n8n — tambahan, tidak mengubah gaya lama */
-    .aic-toggle {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 9998;
-      width: 58px;
-      height: 58px;
-      border: 0;
-      border-radius: 16px;
-      background: #fff;
-      color: #111;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .aic-toggle { overflow: hidden; padding: 0; }
-    .aic-toggle img { width: 58px; height: 58px; display:block; object-fit: contain; border-radius: 16px; }
-    .aic-toggle.open { background: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.18); }
-    .aic-panel {
-      position: fixed;
-      right: 18px;
-      bottom: 84px;
-      z-index: 9999;
-      width: min(92vw, 380px);
-      height: min(74vh, 560px);
-      background: #fff;
-      border-radius: 16px;
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      box-shadow: 0 18px 50px rgba(16,19,48,0.28);
-      font-family: Arial, Helvetica, sans-serif;
-    }
-    .aic-panel.open { display: flex; }
-    .aic-head {
-      background: #fff;
-      color: #111;
-      border-bottom: 1px solid #eee;
-      padding: 16px 16px 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 8px;
-    }
-    .aic-head strong { display: block; font-size: 16px; }
-    .aic-head span { display: block; font-size: 12px; opacity: 0.85; margin-top: 4px; font-weight: 400; }
-    .aic-head button {
-      background: transparent;
-      border: 0;
-      color: #111;
-      font-size: 22px;
-      line-height: 1;
-      cursor: pointer;
-      padding: 0 4px;
-    }
-    .aic-log {
-      flex: 1;
-      overflow: auto;
-      padding: 16px 14px;
-      background: #f7f7f7;
-    }
-    .aic-msg {
-      max-width: 85%;
-      padding: 10px 12px;
-      margin: 0 0 10px;
-      border-radius: 14px;
-      font-size: 14px;
-      line-height: 1.45;
-      white-space: pre-wrap;
-    }
-    .aic-msg.bot {
-      background: #fff;
-      color: #222;
-      border-bottom-left-radius: 4px;
-      box-shadow: 0 1px 2px rgba(16,19,48,0.08);
-    }
-    .aic-msg.user {
-      background: #f0f0f0;
-      color: #111;
-      margin-left: auto;
-      border-bottom-right-radius: 4px;
-    }
-    .aic-msg.pending { color: #6b6780; font-style: italic; }
-    .aic-dots span {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      margin-right: 3px;
-      border-radius: 50%;
-      background: #9a96b0;
-      animation: aicBlink 1s infinite;
-    }
-    .aic-dots span:nth-child(2) { animation-delay: 0.15s; }
-    .aic-dots span:nth-child(3) { animation-delay: 0.3s; }
-    @keyframes aicBlink {
-      0%, 80%, 100% { opacity: 0.25; }
-      40% { opacity: 1; }
-    }
-    .aic-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      padding: 0 14px 8px;
-      background: #f7f7f7;
-    }
-    .aic-chips button {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      border: 1px solid #ddd8ef;
-      background: #fff;
-      color: #3b2d6b;
-      padding: 6px 9px;
-      border-radius: 999px;
-      cursor: pointer;
-    }
-    .aic-form {
-      display: flex;
-      gap: 8px;
-      padding: 10px 12px 12px;
-      border-top: 1px solid #eceaf6;
-      background: #fff;
-    }
-    .aic-form input {
-      flex: 1;
-      border: 1px solid #e2deed;
-      border-radius: 999px;
-      padding: 10px 14px;
-      font: 14px/1.4 Arial, Helvetica, sans-serif;
-      outline: none;
-    }
-    .aic-form button {
-      width: 42px;
-      height: 42px;
-      border: 0;
-      border-radius: 50%;
-      background: #fff;
-      color: #111;
-      border: 1px solid #ddd;
-      cursor: pointer;
-      font-size: 16px;
-    }
     @media (max-width: 700px) {
-      h1 { font-size: 24px; }
-      .dua, .grid2 { grid-template-columns: 1fr; }
-      iframe { height: 520px; }
+      h1 {
+        font-size: 24px;
+      }
+
+      .dua,
+      .grid2 {
+        grid-template-columns: 1fr;
+      }
+
+      iframe {
+        height: 520px;
+      }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- TOP BAR -->
   <div class="topbar">
     <div class="topbar-in">
-      <button class="burger" id="btnMenu" type="button" aria-label="Buka menu">
-        <span></span><span></span><span></span>
+      <button
+        class="burger"
+        id="btnMenu"
+        type="button"
+        aria-label="Buka menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
-      <div class="top-label">SMPN 165 Jakarta · Kelas 8E</div>
+
+      <div class="top-label">
+        SMPN 165 Jakarta · Kelas 8E
+      </div>
     </div>
   </div>
 
+  <!-- MENU -->
   <div class="menu-bg" id="menuBg">
     <nav class="menu-panel" aria-label="Menu utama">
+
       <p class="nomor">Menu</p>
-      <h2>Berfikir Kritis Melalui Pembelajaran Matematika dan PKN</h2>
-      <a href="#beranda" data-page="beranda">Beranda</a>
-      <a class="utama" href="#materi" data-page="materi">Pembelajaran dan Melatih Kemampuan Matematika dan Pendidikan Pancasila</a>
-      <a href="#angket" data-page="angket">Data Angket Penghambat Proses Pembelajaran presensi kelas 8E 9 September 2026 (32 Siswa)</a>
-      <button type="button" class="tutup" id="btnTutup">Tutup</button>
+
+      <h2>
+        Berfikir Kritis Melalui Pembelajaran Matematika dan PKN
+      </h2>
+
+      <a href="#beranda" data-page="beranda">
+        Beranda
+      </a>
+
+      <a
+        class="utama"
+        href="#materi"
+        data-page="materi"
+      >
+        Pembelajaran dan Melatih Kemampuan Matematika dan Pendidikan Pancasila
+      </a>
+
+      <a
+        href="#angket"
+        data-page="angket"
+      >
+        Data Angket Penghambat Proses Pembelajaran
+        presensi kelas 8E 9 September 2026 (32 Siswa)
+      </a>
+
+      <button
+        type="button"
+        class="tutup"
+        id="btnTutup"
+      >
+        Tutup
+      </button>
+
     </nav>
   </div>
 
-  <div class="wrap">
+  <main class="wrap">
+
+    <!-- ==================== BERANDA ==================== -->
+
     <div class="page on" id="page-beranda">
+
       <header class="cover">
-        <div class="sekolah">Kokurikuler Lintas Mapel · Ilmuwan Cilik</div>
-        <h1>Berfikir Kritis Melalui Pembelajaran Matematika dan PKN</h1>
-        <p class="sub">Produk 2D berupa website infografis. Matematika dijodohkan dengan Pendidikan Pancasila.</p>
+
+        <div class="sekolah">
+          Kokurikuler Lintas Mapel · Ilmuwan Cilik
+        </div>
+
+        <h1>
+          Berfikir Kritis Melalui Pembelajaran Matematika dan PKN
+        </h1>
+
+        <p class="sub">
+          Produk 2D berupa website infografis.
+          Matematika dijodohkan dengan Pendidikan Pancasila.
+        </p>
+
       </header>
 
       <section>
-        <p class="nomor">Identitas kelompok</p>
-        <h2>Kelompok 1 · Kelas 8E</h2>
+
+        <p class="nomor">
+          Identitas kelompok
+        </p>
+
+        <h2>
+          Kelompok 1 · Kelas 8E
+        </h2>
+
         <div class="grid2">
-          <div class="kartu"><strong>Sekolah</strong><br>SMP Negeri 165 Jakarta</div>
-          <div class="kartu"><strong>Kelas / kelompok</strong><br>8E · Kelompok 1</div>
-          <div class="kartu"><strong>Tema</strong><br>Peningkatan Proses Pembelajaran</div>
-          <div class="kartu"><strong>Bentuk karya</strong><br>Website infografis 2D</div>
+
+          <div class="kartu">
+            <strong>Sekolah</strong><br>
+            SMP Negeri 165 Jakarta
+          </div>
+
+          <div class="kartu">
+            <strong>Kelas / kelompok</strong><br>
+            8E · Kelompok 1
+          </div>
+
+          <div class="kartu">
+            <strong>Tema</strong><br>
+            Peningkatan Proses Pembelajaran
+          </div>
+
+          <div class="kartu">
+            <strong>Bentuk karya</strong><br>
+            Website infografis 2D
+          </div>
+
         </div>
+
       </section>
 
       <section>
-        <p class="nomor">Anggota kelompok</p>
-        <h2>Pengenalan kelompok</h2>
+
+        <p class="nomor">
+          Anggota kelompok
+        </p>
+
+        <h2>
+          Pengenalan kelompok
+        </h2>
+
         <table>
-          <thead><tr><th>Nama</th><th>Peran</th></tr></thead>
+
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Peran</th>
+            </tr>
+          </thead>
+
           <tbody>
-            <tr><td>Hamad Zaid Jessar</td><td>Ketua</td></tr>
-            <tr><td>Nayyara Kimi Ayumi</td><td>Sekretaris</td></tr>
-            <tr><td>Calista Anatasya</td><td>Anggota</td></tr>
-            <tr><td>Alicia Eleanor Amora</td><td>Anggota</td></tr>
-            <tr><td>Hamizan Alvaro</td><td>Anggota</td></tr>
-            <tr><td>Muhammad Alfatharrahman</td><td>Anggota</td></tr>
+
+            <tr>
+              <td>Hamad Zaid Jessar</td>
+              <td>Ketua</td>
+            </tr>
+
+            <tr>
+              <td>Nayyara Kimi Ayumi</td>
+              <td>Sekretaris</td>
+            </tr>
+
+            <tr>
+              <td>Calista Anatasya</td>
+              <td>Anggota</td>
+            </tr>
+
+            <tr>
+              <td>Alicia Eleanor Amora</td>
+              <td>Anggota</td>
+            </tr>
+
+            <tr>
+              <td>Hamizan Alvaro</td>
+              <td>Anggota</td>
+            </tr>
+
+            <tr>
+              <td>Muhammad Alfatharrahman</td>
+              <td>Anggota</td>
+            </tr>
+
           </tbody>
+
         </table>
+
       </section>
 
       <section>
-        <p class="nomor">Layanan interaktif</p>
-        <h2>Pilih layanan</h2>
-        <p>Gunakan tombol menu garis tiga di kiri atas, atau kartu di bawah.</p>
-        <a class="kartu navy" href="#materi" data-page="materi">
-          <span class="sekolah">Layanan 1</span>
-          <strong style="display:block;font-size:20px;margin:8px 0;">Pembelajaran dan Melatih Kemampuan Matematika dan Pendidikan Pancasila</strong>
-          Infografis kelas 8 Bab 1 &amp; Bab 6, plus materi kelas 7, dipasangkan dengan PKN. Termasuk kuis Educaplay.
+
+        <p class="nomor">
+          Layanan interaktif
+        </p>
+
+        <h2>
+          Pilih layanan
+        </h2>
+
+        <p>
+          Gunakan tombol menu garis tiga di kiri atas,
+          atau kartu di bawah.
+        </p>
+
+        <a
+          class="kartu navy"
+          href="#materi"
+          data-page="materi"
+        >
+
+          <span class="sekolah">
+            Layanan 1
+          </span>
+
+          <strong
+            style="display:block;font-size:20px;margin:8px 0;"
+          >
+            Pembelajaran dan Melatih Kemampuan Matematika
+            dan Pendidikan Pancasila
+          </strong>
+
+          Infografis kelas 8 Bab 1 &amp; Bab 6,
+          plus materi kelas 7, dipasangkan dengan PKN.
+          Termasuk kuis Educaplay.
+
         </a>
-        <a class="kartu" href="#angket" data-page="angket" style="margin-top:12px;">
-          <span class="sekolah" style="color:var(--merah);">Layanan 2</span>
-          <strong style="display:block;font-size:20px;margin:8px 0;color:var(--navy);">Data Angket Penghambat Proses Pembelajaran</strong>
-          Presensi kelas 8E, 9 September 2026 (32 siswa). Diagram batang dan solusi.
+
+        <a
+          class="kartu"
+          href="#angket"
+          data-page="angket"
+          style="margin-top:12px;"
+        >
+
+          <span
+            class="sekolah"
+            style="color:var(--merah);"
+          >
+            Layanan 2
+          </span>
+
+          <strong
+            style="display:block;font-size:20px;margin:8px 0;color:var(--navy);"
+          >
+            Data Angket Penghambat Proses Pembelajaran
+          </strong>
+
+          Presensi kelas 8E,
+          9 September 2026 (32 siswa).
+          Diagram batang dan solusi.
+
         </a>
+
       </section>
-      <footer>Ilmuwan Cilik · SMP Negeri 165 Jakarta</footer>
+
+      <footer>
+        Ilmuwan Cilik · SMP Negeri 165 Jakarta
+      </footer>
+
     </div>
 
+
+    <!-- ==================== MATERI ==================== -->
+
     <div class="page" id="page-materi">
+
       <header class="cover">
-        <div class="sekolah">Pembelajaran dan Melatih Kemampuan</div>
-        <h1>Matematika dan Pendidikan Pancasila</h1>
-        <p class="sub">Infografis menjodohkan konsep Matematika dengan Pendidikan Pancasila. Materi: kelas 8 Bab 1 dan Bab 6, plus seluruh materi kelas 7.</p>
-        <p class="caption">Produk 2D · Tema: Peningkatan Proses Pembelajaran</p>
+
+        <div class="sekolah">
+          Pembelajaran dan Melatih Kemampuan
+        </div>
+
+        <h1>
+          Matematika dan Pendidikan Pancasila
+        </h1>
+
+        <p class="sub">
+          Infografis menjodohkan konsep Matematika
+          dengan Pendidikan Pancasila.
+          Materi: kelas 8 Bab 1 dan Bab 6,
+          plus seluruh materi kelas 7.
+        </p>
+
+        <p class="caption">
+          Produk 2D · Tema: Peningkatan Proses Pembelajaran
+        </p>
+
       </header>
 
       <div class="chips">
+
         <a href="#cara">Cara baca</a>
         <a href="#k8b1">Aljabar</a>
         <a href="#k8b6">Peluang</a>
@@ -482,264 +660,976 @@
         <a href="#k7data">Data</a>
         <a href="#k7bangun">Bangun</a>
         <a href="#kuis">Kuis</a>
+
       </div>
 
+
       <section id="cara">
-        <p class="nomor">Cara memakai infografis</p>
-        <h2>Jodohkan seperti kuis</h2>
-        <p>Setiap halaman punya dua sisi. Sisi kiri: konsep Matematika. Sisi kanan: nilai PKN / Pendidikan Pancasila. Cara berfikirnya sama seperti kuis menjodohkan: cari pasangan yang tepat, jangan langsung percaya klaim.</p>
+
+        <p class="nomor">
+          Cara memakai infografis
+        </p>
+
+        <h2>
+          Jodohkan seperti kuis
+        </h2>
+
+        <p>
+          Setiap halaman punya dua sisi.
+          Sisi kiri: konsep Matematika.
+          Sisi kanan: nilai PKN / Pendidikan Pancasila.
+          Cara berfikirnya sama seperti kuis menjodohkan:
+          cari pasangan yang tepat, jangan langsung percaya klaim.
+        </p>
+
         <table>
-          <thead><tr><th>Kartu Matematika</th><th>Kartu PKN yang cocok</th></tr></thead>
+
+          <thead>
+            <tr>
+              <th>Kartu Matematika</th>
+              <th>Kartu PKN yang cocok</th>
+            </tr>
+          </thead>
+
           <tbody>
-            <tr><td>Bentuk aljabar (kelas 8 Bab 1)</td><td>Aturan yang bisa dicek, bukan hanya diucapkan</td></tr>
-            <tr><td>Peluang (kelas 8 Bab 6)</td><td>Musyawarah jangan berdasarkan desas-desus</td></tr>
-            <tr><td>Bilangan bulat +/− (kelas 7)</td><td>Hak dan kewajiban saling menyeimbangkan</td></tr>
-            <tr><td>Persamaan linear (kelas 7)</td><td>Keadilan: ruas kiri dan kanan harus seimbang</td></tr>
-            <tr><td>Perbandingan (kelas 7)</td><td>Pembagian tugas dan fasilitas yang proporsional</td></tr>
-            <tr><td>Data dan diagram (kelas 7)</td><td>Keputusan bersama berdasarkan fakta</td></tr>
-            <tr><td>Bangun datar dan ruang (kelas 7)</td><td>Fasilitas sekolah adalah milik bersama</td></tr>
+
+            <tr>
+              <td>Bentuk aljabar (kelas 8 Bab 1)</td>
+              <td>Aturan yang bisa dicek, bukan hanya diucapkan</td>
+            </tr>
+
+            <tr>
+              <td>Peluang (kelas 8 Bab 6)</td>
+              <td>Musyawarah jangan berdasarkan desas-desus</td>
+            </tr>
+
+            <tr>
+              <td>Bilangan bulat +/− (kelas 7)</td>
+              <td>Hak dan kewajiban saling menyeimbangkan</td>
+            </tr>
+
+            <tr>
+              <td>Persamaan linear (kelas 7)</td>
+              <td>Keadilan: ruas kiri dan kanan harus seimbang</td>
+            </tr>
+
+            <tr>
+              <td>Perbandingan (kelas 7)</td>
+              <td>Pembagian tugas dan fasilitas yang proporsional</td>
+            </tr>
+
+            <tr>
+              <td>Data dan diagram (kelas 7)</td>
+              <td>Keputusan bersama berdasarkan fakta</td>
+            </tr>
+
+            <tr>
+              <td>Bangun datar dan ruang (kelas 7)</td>
+              <td>Fasilitas sekolah adalah milik bersama</td>
+            </tr>
+
           </tbody>
+
         </table>
+
       </section>
+
 
       <section id="k8b1">
-        <p class="nomor">Kelas 8 · Bab 1 · Menyederhanakan bentuk aljabar</p>
-        <h2>Aljabar membuat aturan bisa dihitung</h2>
-        <p>Bentuk aljabar memakai huruf untuk mewakili suatu nilai. Huruf itu disebut variabel. Suku-suku sejenis boleh dijumlahkan supaya kalimatnya lebih sederhana.</p>
-        <p class="rumus">3x + 2x + 5 = 5x + 5</p>
-        <p>Contoh di sekolah: tiap kelompok membawa 4 sapu, dan ada 5 sapu cadangan. Jika kelompoknya x, jumlah sapu = 4x + 5.</p>
+
+        <p class="nomor">
+          Kelas 8 · Bab 1 · Menyederhanakan bentuk aljabar
+        </p>
+
+        <h2>
+          Aljabar membuat aturan bisa dihitung
+        </h2>
+
+        <p>
+          Bentuk aljabar memakai huruf untuk mewakili suatu nilai.
+          Huruf itu disebut variabel.
+          Suku-suku sejenis boleh dijumlahkan supaya kalimatnya
+          lebih sederhana.
+        </p>
+
+        <p class="rumus">
+          3x + 2x + 5 = 5x + 5
+        </p>
+
+        <p>
+          Contoh di sekolah:
+          tiap kelompok membawa 4 sapu,
+          dan ada 5 sapu cadangan.
+          Jika kelompoknya x,
+          jumlah sapu = 4x + 5.
+        </p>
+
         <div class="dua">
+
           <div class="kotak mtk">
-            <h3>Pasangan Matematika</h3>
-            <p>Sederhanakan dulu, baru dipakai untuk mengambil keputusan. Kalau bentuknya masih berantakan, hitungannya mudah keliru.</p>
+
+            <h3>
+              Pasangan Matematika
+            </h3>
+
+            <p>
+              Sederhanakan dulu,
+              baru dipakai untuk mengambil keputusan.
+              Kalau bentuknya masih berantakan,
+              hitungannya mudah keliru.
+            </p>
+
           </div>
+
           <div class="kotak pkn">
-            <h3>Pasangan PKN</h3>
-            <p>Tata tertib sekolah juga harus jelas. Aturan yang kabur sulit dijalankan adil. Sila ke-5 meminta keadilan yang dapat dijelaskan, bukan hanya diucapkan.</p>
+
+            <h3>
+              Pasangan PKN
+            </h3>
+
+            <p>
+              Tata tertib sekolah juga harus jelas.
+              Aturan yang kabur sulit dijalankan adil.
+              Sila ke-5 meminta keadilan yang dapat dijelaskan,
+              bukan hanya diucapkan.
+            </p>
+
           </div>
+
         </div>
+
       </section>
+
 
       <section id="k8b6">
-        <p class="nomor">Kelas 8 · Bab 6 · Peluang</p>
-        <h2>Peluang menguji kata “hampir semua”</h2>
-        <p>Peluang suatu kejadian adalah perbandingan banyak hasil yang dimaksud dengan banyak semua hasil yang mungkin.</p>
-        <p class="rumus">P(kejadian) = banyak hasil dimaksud / banyak semua hasil</p>
-        <p>Contoh: dari 10 kartu nama siswa, 3 kartu bertuliskan “setuju pulang awal”. Peluang terambil kartu “setuju” = 3/10.</p>
-        <p>3/10 belum boleh diubah menjadi kalimat “hampir seluruh kelas setuju”. Sampelnya terlalu kecil dan belum mewakili seluruh siswa.</p>
+
+        <p class="nomor">
+          Kelas 8 · Bab 6 · Peluang
+        </p>
+
+        <h2>
+          Peluang menguji kata “hampir semua”
+        </h2>
+
+        <p>
+          Peluang suatu kejadian adalah perbandingan banyak hasil
+          yang dimaksud dengan banyak semua hasil yang mungkin.
+        </p>
+
+        <p class="rumus">
+          P(kejadian) =
+          banyak hasil dimaksud /
+          banyak semua hasil
+        </p>
+
+        <p>
+          Contoh:
+          dari 10 kartu nama siswa,
+          3 kartu bertuliskan “setuju pulang awal”.
+          Peluang terambil kartu “setuju” = 3/10.
+        </p>
+
+        <p>
+          3/10 belum boleh diubah menjadi kalimat
+          “hampir seluruh kelas setuju”.
+          Sampelnya terlalu kecil dan belum mewakili seluruh siswa.
+        </p>
+
         <div class="dua">
+
           <div class="kotak mtk">
-            <h3>Pasangan Matematika</h3>
-            <p>Bedakan peluang dari satu percobaan dengan klaim tentang seluruh sekolah. Frekuensi relatif dari sampel kecil bukan bukti untuk semua orang.</p>
+
+            <h3>
+              Pasangan Matematika
+            </h3>
+
+            <p>
+              Bedakan peluang dari satu percobaan
+              dengan klaim tentang seluruh sekolah.
+              Sampel kecil bukan bukti untuk semua orang.
+            </p>
+
           </div>
+
           <div class="kotak pkn">
-            <h3>Pasangan PKN</h3>
-            <p>Musyawarah (sila ke-4) butuh data, bukan desas-desus. Menyebarkan klaim tanpa perhitungan merusak keputusan bersama.</p>
+
+            <h3>
+              Pasangan PKN
+            </h3>
+
+            <p>
+              Musyawarah (sila ke-4) butuh data,
+              bukan desas-desus.
+              Menyebarkan klaim tanpa perhitungan
+              merusak keputusan bersama.
+            </p>
+
           </div>
+
         </div>
+
       </section>
+
 
       <section id="k7bil">
-        <p class="nomor">Kelas 7 · Bilangan bulat</p>
-        <h2>Positif dan negatif menyeimbangkan tanggung jawab</h2>
-        <p>Bilangan bulat mencakup 0, bilangan positif, dan bilangan negatif. Penjumlahan bilangan lawan menghasilkan nol.</p>
-        <p class="rumus">(+7) + (−7) = 0</p>
-        <p>Contoh: kas kelas bertambah Rp7.000 lalu dipakai Rp7.000. Saldo kembali seimbang.</p>
+
+        <p class="nomor">
+          Kelas 7 · Bilangan bulat
+        </p>
+
+        <h2>
+          Positif dan negatif menyeimbangkan tanggung jawab
+        </h2>
+
+        <p>
+          Bilangan bulat mencakup 0,
+          bilangan positif, dan bilangan negatif.
+          Penjumlahan bilangan lawan menghasilkan nol.
+        </p>
+
+        <p class="rumus">
+          (+7) + (−7) = 0
+        </p>
+
+        <p>
+          Contoh:
+          kas kelas bertambah Rp7.000
+          lalu dipakai Rp7.000.
+          Saldo kembali seimbang.
+        </p>
+
         <div class="dua">
+
           <div class="kotak mtk">
-            <h3>Pasangan Matematika</h3>
-            <p>Tanda + dan − harus ditulis. Tanpa tanda, kita tidak tahu apakah uang masuk atau keluar.</p>
+
+            <h3>
+              Pasangan Matematika
+            </h3>
+
+            <p>
+              Tanda + dan − harus ditulis.
+              Tanpa tanda, kita tidak tahu
+              apakah uang masuk atau keluar.
+            </p>
+
           </div>
+
           <div class="kotak pkn">
-            <h3>Pasangan PKN</h3>
-            <p>Hak dan kewajiban berjalan berpasangan. Terima hak tanpa menjalankan kewajiban membuat kehidupan bersama tidak seimbang.</p>
+
+            <h3>
+              Pasangan PKN
+            </h3>
+
+            <p>
+              Hak dan kewajiban berjalan berpasangan.
+              Terima hak tanpa menjalankan kewajiban
+              membuat kehidupan bersama tidak seimbang.
+            </p>
+
           </div>
+
         </div>
+
       </section>
+
 
       <section id="k7pers">
-        <p class="nomor">Kelas 7 · Persamaan linear</p>
-        <h2>Persamaan menjaga kedua ruas tetap adil</h2>
-        <p>Persamaan linear menyatakan dua ruas yang nilainya sama. Apa pun yang dilakukan di ruas kiri harus dilakukan juga di ruas kanan.</p>
-        <p class="rumus">x + 4 = 10 → x = 6</p>
-        <p>Contoh: 6 kelompok mendapat bagian sama dari 24 tugas piket. x adalah tugas tiap kelompok. 6x = 24, jadi x = 4.</p>
+
+        <p class="nomor">
+          Kelas 7 · Persamaan linear
+        </p>
+
+        <h2>
+          Persamaan menjaga kedua ruas tetap adil
+        </h2>
+
+        <p>
+          Persamaan linear menyatakan dua ruas
+          yang nilainya sama.
+          Apa pun yang dilakukan di ruas kiri
+          harus dilakukan juga di ruas kanan.
+        </p>
+
+        <p class="rumus">
+          x + 4 = 10 → x = 6
+        </p>
+
+        <p>
+          Contoh:
+          6 kelompok mendapat bagian sama dari 24 tugas piket.
+          x adalah tugas tiap kelompok.
+          6x = 24, jadi x = 4.
+        </p>
+
         <div class="dua">
+
           <div class="kotak mtk">
-            <h3>Pasangan Matematika</h3>
-            <p>Kalau hanya satu ruas yang diubah, persamaan menjadi salah. Keseimbangan rusak.</p>
+
+            <h3>
+              Pasangan Matematika
+            </h3>
+
+            <p>
+              Kalau hanya satu ruas yang diubah,
+              persamaan menjadi salah.
+              Keseimbangan rusak.
+            </p>
+
           </div>
+
           <div class="kotak pkn">
-            <h3>Pasangan PKN</h3>
-            <p>Keadilan sosial menuntut perlakuan yang dapat dihitung. Membuang tugas ke satu orang saja sama dengan merusak persamaan.</p>
+
+            <h3>
+              Pasangan PKN
+            </h3>
+
+            <p>
+              Keadilan sosial menuntut perlakuan
+              yang dapat dihitung.
+              Membuang tugas ke satu orang saja
+              sama dengan merusak persamaan.
+            </p>
+
           </div>
+
         </div>
+
       </section>
+
 
       <section id="k7band">
-        <p class="nomor">Kelas 7 · Perbandingan</p>
-        <h2>Perbandingan mengatur bagian yang proporsional</h2>
-        <p>Perbandingan senilai: jika salah satu membesar, yang lain membesar dengan rasio yang sama. Perbandingan berbalik nilai: jika salah satu membesar, yang lain mengecil.</p>
-        <p class="rumus">2 : 3 = 8 : 12</p>
-        <p>Contoh senilai: 2 guru mendampingi 3 kelompok. Untuk 6 kelompok diperlukan 4 guru. Contoh berbalik nilai: makin banyak orang yang mengerjakan, waktu yang dibutuhkan makin singkat.</p>
+
+        <p class="nomor">
+          Kelas 7 · Perbandingan
+        </p>
+
+        <h2>
+          Perbandingan mengatur bagian yang proporsional
+        </h2>
+
+        <p>
+          Perbandingan senilai:
+          jika salah satu membesar,
+          yang lain membesar dengan rasio yang sama.
+          Perbandingan berbalik nilai:
+          jika salah satu membesar,
+          yang lain mengecil.
+        </p>
+
+        <p class="rumus">
+          2 : 3 = 8 : 12
+        </p>
+
+        <p>
+          Contoh senilai:
+          2 guru mendampingi 3 kelompok.
+          Untuk 6 kelompok diperlukan 4 guru.
+        </p>
+
         <div class="dua">
+
           <div class="kotak mtk">
-            <h3>Pasangan Matematika</h3>
-            <p>Tulis rasio dengan satuan yang sama, lalu samakan perbandingannya sebelum memutuskan.</p>
+
+            <h3>
+              Pasangan Matematika
+            </h3>
+
+            <p>
+              Tulis rasio dengan satuan yang sama,
+              lalu samakan perbandingannya sebelum memutuskan.
+            </p>
+
           </div>
+
           <div class="kotak pkn">
-            <h3>Pasangan PKN</h3>
-            <p>Pembagian kerja bakti atau fasilitas sekolah sebaiknya proporsional. Gotong royong bukan berarti satu orang bekerja terus.</p>
+
+            <h3>
+              Pasangan PKN
+            </h3>
+
+            <p>
+              Pembagian kerja bakti atau fasilitas sekolah
+              sebaiknya proporsional.
+              Gotong royong bukan berarti satu orang
+              bekerja terus.
+            </p>
+
           </div>
+
         </div>
+
       </section>
+
 
       <section id="k7data">
-        <p class="nomor">Kelas 7 · Data dan diagram</p>
-        <h2>Diagram menolong musyawarah berbasis fakta</h2>
-        <p>Data dikumpulkan, disusun, lalu ditampilkan. Diagram batang cocok untuk membandingkan jumlah. Diagram lingkaran cocok untuk melihat bagian dari keseluruhan.</p>
+
+        <p class="nomor">
+          Kelas 7 · Data dan diagram
+        </p>
+
+        <h2>
+          Diagram menolong musyawarah berbasis fakta
+        </h2>
+
+        <p>
+          Data dikumpulkan, disusun, lalu ditampilkan.
+          Diagram batang cocok untuk membandingkan jumlah.
+          Diagram lingkaran cocok untuk melihat bagian
+          dari keseluruhan.
+        </p>
+
         <table>
-          <thead><tr><th>Pilihan kegiatan kelas</th><th>Suara</th></tr></thead>
+
+          <thead>
+            <tr>
+              <th>Pilihan kegiatan kelas</th>
+              <th>Suara</th>
+            </tr>
+          </thead>
+
           <tbody>
-            <tr><td>Mading Pancasila</td><td>12</td></tr>
-            <tr><td>Kerja bakti perpustakaan</td><td>8</td></tr>
-            <tr><td>Lomba pidato</td><td>5</td></tr>
+
+            <tr>
+              <td>Mading Pancasila</td>
+              <td>12</td>
+            </tr>
+
+            <tr>
+              <td>Kerja bakti perpustakaan</td>
+              <td>8</td>
+            </tr>
+
+            <tr>
+              <td>Lomba pidato</td>
+              <td>5</td>
+            </tr>
+
           </tbody>
+
         </table>
-        <svg viewBox="0 0 360 110" role="img" aria-label="Diagram batang pilihan kegiatan" style="width:100%;max-width:420px;">
-          <text x="0" y="20" font-size="12" font-family="Arial">Mading</text>
-          <rect x="70" y="8" width="168" height="16" fill="#2c4a7c"></rect>
-          <text x="244" y="21" font-size="12" font-family="Arial">12</text>
-          <text x="0" y="52" font-size="12" font-family="Arial">Bakti</text>
-          <rect x="70" y="40" width="112" height="16" fill="#2f5d3a"></rect>
-          <text x="188" y="53" font-size="12" font-family="Arial">8</text>
-          <text x="0" y="84" font-size="12" font-family="Arial">Pidato</text>
-          <rect x="70" y="72" width="70" height="16" fill="#9b1c1c"></rect>
-          <text x="146" y="85" font-size="12" font-family="Arial">5</text>
-        </svg>
-        <p class="caption">Gambar 1. Hasil penjaringan pendapat 25 siswa.</p>
+
         <div class="dua">
+
           <div class="kotak mtk">
-            <h3>Pasangan Matematika</h3>
-            <p>Jumlah suara 12 + 8 + 5 = 25. Grafik harus sesuai tabel. Jika batangnya lebih tinggi tanpa angka yang bertambah, datanya menipu.</p>
+
+            <h3>
+              Pasangan Matematika
+            </h3>
+
+            <p>
+              Jumlah suara 12 + 8 + 5 = 25.
+              Grafik harus sesuai tabel.
+            </p>
+
           </div>
+
           <div class="kotak pkn">
-            <h3>Pasangan PKN</h3>
-            <p>Keputusan kelas memakai data, lalu tetap menghargai kelompok yang kalah jumlah. Itu musyawarah, bukan menang sendiri.</p>
+
+            <h3>
+              Pasangan PKN
+            </h3>
+
+            <p>
+              Keputusan kelas memakai data,
+              lalu tetap menghargai kelompok
+              yang kalah jumlah.
+            </p>
+
           </div>
+
         </div>
+
       </section>
+
 
       <section id="k7bangun">
-        <p class="nomor">Kelas 7 · Bangun datar dan bangun ruang</p>
-        <h2>Ukuran ruang milik bersama harus dihitung</h2>
-        <p>Bangun datar diukur luasnya. Bangun ruang diukur volume atau kapasitasnya. Perhitungan ini dipakai saat menata fasilitas sekolah.</p>
-        <p class="rumus">Luas persegi panjang = p × l | Volume balok = p × l × t</p>
-        <p>Contoh: pojok baca 3 m × 2 m = 6 m². Kalau raknya terlalu besar, jalur siswa menjadi sempit. Fasilitas itu milik bersama, jadi ukurannya perlu masuk akal untuk semua.</p>
+
+        <p class="nomor">
+          Kelas 7 · Bangun datar dan bangun ruang
+        </p>
+
+        <h2>
+          Ukuran ruang milik bersama harus dihitung
+        </h2>
+
+        <p>
+          Bangun datar diukur luasnya.
+          Bangun ruang diukur volume atau kapasitasnya.
+          Perhitungan ini dipakai saat menata fasilitas sekolah.
+        </p>
+
+        <p class="rumus">
+          Luas persegi panjang = p × l
+          <br>
+          Volume balok = p × l × t
+        </p>
+
+        <p>
+          Contoh:
+          pojok baca 3 m × 2 m = 6 m².
+          Kalau raknya terlalu besar,
+          jalur siswa menjadi sempit.
+        </p>
+
         <div class="dua">
+
           <div class="kotak mtk">
-            <h3>Pasangan Matematika</h3>
-            <p>Hitung luas lantai dan kapasitas ruangan sebelum menambah barang. Jangan menaksir saja.</p>
+
+            <h3>
+              Pasangan Matematika
+            </h3>
+
+            <p>
+              Hitung luas lantai dan kapasitas ruangan
+              sebelum menambah barang.
+            </p>
+
           </div>
+
           <div class="kotak pkn">
-            <h3>Pasangan PKN</h3>
-            <p>Sekolah adalah ruang bersama. Menaruh barang semaunya merugikan hak siswa lain untuk lewat dan belajar aman.</p>
+
+            <h3>
+              Pasangan PKN
+            </h3>
+
+            <p>
+              Sekolah adalah ruang bersama.
+              Menaruh barang semaunya dapat merugikan
+              siswa lain.
+            </p>
+
           </div>
+
         </div>
+
       </section>
 
+
       <section id="kuis">
-        <p class="nomor">Latihan menjodohkan</p>
-        <h2>Kuis Educaplay</h2>
-        <p>Setelah membaca infografis, jodohkan soal dengan jawaban yang tepat.</p>
-        <div style="border:2px dashed var(--navy); background:var(--kertas); padding:10px;">
+
+        <p class="nomor">
+          Latihan menjodohkan
+        </p>
+
+        <h2>
+          Kuis Educaplay
+        </h2>
+
+        <p>
+          Setelah membaca infografis,
+          jodohkan soal dengan jawaban yang tepat.
+        </p>
+
+        <div
+          style="
+            border:2px dashed var(--navy);
+            background:var(--kertas);
+            padding:10px;
+          "
+        >
+
           <iframe
             title="Kuis Matching Matematika dan Pendidikan Pancasila"
             src="https://www.educaplay.com/learning-resources/30519624-matching_fotosintesis_dasar.html"
             allowfullscreen
             loading="lazy"
           ></iframe>
+
           <p>
-            <a class="tombol" href="https://www.educaplay.com/learning-resources/30519624-matching_fotosintesis_dasar.html" target="_blank" rel="noopener">Buka kuis di tab baru</a>
+
+            <a
+              class="tombol"
+              href="https://www.educaplay.com/learning-resources/30519624-matching_fotosintesis_dasar.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Buka kuis di tab baru
+            </a>
+
           </p>
+
         </div>
+
       </section>
 
-      <a class="kembali" href="#beranda" data-page="beranda">Kembali ke beranda</a>
+      <a
+        class="kembali"
+        href="#beranda"
+        data-page="beranda"
+      >
+        Kembali ke beranda
+      </a>
+
     </div>
+
+
+    <!-- ==================== ANGKET ==================== -->
 
     <div class="page" id="page-angket">
+
       <header class="cover">
-        <div class="sekolah">Presensi kelas 8E · 9 September 2026 · 32 siswa</div>
-        <h1>Data Angket Penghambat Proses Pembelajaran</h1>
-        <p class="sub">Hasil penjaringan hambatan belajar. Jumlah jawaban bisa lebih dari 32 karena seorang siswa boleh menuliskan lebih dari satu hambatan.</p>
+
+        <div class="sekolah">
+          Presensi kelas 8E · 9 September 2026 · 32 siswa
+        </div>
+
+        <h1>
+          Data Angket Penghambat Proses Pembelajaran
+        </h1>
+
+        <p class="sub">
+          Hasil penjaringan hambatan belajar.
+          Jumlah jawaban bisa lebih dari 32
+          karena seorang siswa boleh menuliskan
+          lebih dari satu hambatan.
+        </p>
+
       </header>
 
+
       <section>
-        <p class="nomor">Tabel data</p>
-        <h2>Topik dan jumlah orang</h2>
+
+        <p class="nomor">
+          Tabel data
+        </p>
+
+        <h2>
+          Topik dan jumlah orang
+        </h2>
+
         <table>
-          <thead><tr><th>Topik</th><th>Jumlah orang</th></tr></thead>
+
+          <thead>
+            <tr>
+              <th>Topik</th>
+              <th>Jumlah orang</th>
+            </tr>
+          </thead>
+
           <tbody>
-            <tr><td>Kelelahan/capek</td><td>5</td></tr>
-            <tr><td>Kesulitan memahami/mengerjakan tugas</td><td>7</td></tr>
-            <tr><td>Kurangnya kerja sama kelompok</td><td>5</td></tr>
-            <tr><td>Mengantuk</td><td>6</td></tr>
-            <tr><td>Malas/kurang motivasi &amp; minat</td><td>5</td></tr>
-            <tr><td>Terdistraksi HP/bermain</td><td>4</td></tr>
-            <tr><td>Mengobrol</td><td>1</td></tr>
-            <tr><td>Kurangnya koneksi internet</td><td>1</td></tr>
-            <tr><td>Lingkungan kotor</td><td>1</td></tr>
-            <tr><td>Sulit menentukan produk</td><td>1</td></tr>
-            <tr><td>Tidak sanggup</td><td>1</td></tr>
+
+            <tr>
+              <td>Kelelahan/capek</td>
+              <td>5</td>
+            </tr>
+
+            <tr>
+              <td>Kesulitan memahami/mengerjakan tugas</td>
+              <td>7</td>
+            </tr>
+
+            <tr>
+              <td>Kurangnya kerja sama kelompok</td>
+              <td>5</td>
+            </tr>
+
+            <tr>
+              <td>Mengantuk</td>
+              <td>6</td>
+            </tr>
+
+            <tr>
+              <td>Malas/kurang motivasi &amp; minat</td>
+              <td>5</td>
+            </tr>
+
+            <tr>
+              <td>Terdistraksi HP/bermain</td>
+              <td>4</td>
+            </tr>
+
+            <tr>
+              <td>Mengobrol</td>
+              <td>1</td>
+            </tr>
+
+            <tr>
+              <td>Kurangnya koneksi internet</td>
+              <td>1</td>
+            </tr>
+
+            <tr>
+              <td>Lingkungan kotor</td>
+              <td>1</td>
+            </tr>
+
+            <tr>
+              <td>Sulit menentukan produk</td>
+              <td>1</td>
+            </tr>
+
+            <tr>
+              <td>Tidak sanggup</td>
+              <td>1</td>
+            </tr>
+
           </tbody>
+
         </table>
+
       </section>
 
-      <section>
-        <p class="nomor">Diagram batang</p>
-        <h2>Perbandingan jumlah jawaban</h2>
-        <p class="caption">Setiap batang memakai warna berbeda. Panjang batang mengikuti jumlah orang.</p>
-        <div class="bar-row"><div class="bar-lab"><span>Kelelahan/capek</span><strong>5</strong></div><div class="bar-track"><div class="bar-fill" style="width:71.4%;background:#9b1c1c;"></div></div></div>
-        <div class="bar-row"><div class="bar-lab"><span>Kesulitan memahami/mengerjakan tugas</span><strong>7</strong></div><div class="bar-track"><div class="bar-fill" style="width:100%;background:#2c4a7c;"></div></div></div>
-        <div class="bar-row"><div class="bar-lab"><span>Kurangnya kerja sama kelompok</span><strong>5</strong></div><div class="bar-track"><div class="bar-fill" style="width:71.4%;background:#2f5d3a;"></div></div></div>
-        <div class="bar-row"><div class="bar-lab"><span>Mengantuk</span><strong>6</strong></div><div class="bar-track"><div class="bar-fill" style="width:85.7%;background:#b45309;"></div></div></div>
-        <div class="bar-row"><div class="bar-lab"><span>Malas/kurang motivasi &amp; minat</span><strong>5</strong></div><div class="bar-track"><div class="bar-fill" style="width:71.4%;background:#6b21a8;"></div></div></div>
-        <div class="bar-row"><div class="bar-lab"><span>Terdistraksi HP/bermain</span><strong>4</strong></div><div class="bar-track"><div class="bar-fill" style="width:57.1%;background:#0f766e;"></div></div></div>
-        <div class="bar-row"><div class="bar-lab"><span>Mengobrol</span><strong>1</strong></div><div class="bar-track"><div class="bar-fill" style="width:14.3%;background:#be185d;"></div></div></div>
-        <div class="bar-row"><div class="bar-lab"><span>Kurangnya koneksi internet</span><strong>1</strong></div><div class="bar-track"><div class="bar-fill" style="width:14.3%;background:#1d4ed8;"></div></div></div>
-        <div class="bar-row"><div class="bar-lab"><span>Lingkungan kotor</span><strong>1</strong></div><div class="bar-track"><div class="bar-fill" style="width:14.3%;background:#854d0e;"></div></div></div>
-        <div class="bar-row"><div class="bar-lab"><span>Sulit menentukan produk</span><strong>1</strong></div><div class="bar-track"><div class="bar-fill" style="width:14.3%;background:#365314;"></div></div></div>
-        <div class="bar-row"><div class="bar-lab"><span>Tidak sanggup</span><strong>1</strong></div><div class="bar-track"><div class="bar-fill" style="width:14.3%;background:#4b5563;"></div></div></div>
-      </section>
 
       <section>
-        <p class="nomor">Solusi</p>
-        <h2>Cara mengatasi hambatan</h2>
+
+        <p class="nomor">
+          Diagram batang
+        </p>
+
+        <h2>
+          Perbandingan jumlah jawaban
+        </h2>
+
+        <p class="caption">
+          Panjang batang mengikuti jumlah orang.
+        </p>
+
+        <div class="bar-row">
+          <div class="bar-lab">
+            <span>Kelelahan/capek</span>
+            <strong>5</strong>
+          </div>
+          <div class="bar-track">
+            <div
+              class="bar-fill"
+              style="width:71.4%;background:#9b1c1c;"
+            ></div>
+          </div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-lab">
+            <span>Kesulitan memahami/mengerjakan tugas</span>
+            <strong>7</strong>
+          </div>
+          <div class="bar-track">
+            <div
+              class="bar-fill"
+              style="width:100%;background:#2c4a7c;"
+            ></div>
+          </div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-lab">
+            <span>Kurangnya kerja sama kelompok</span>
+            <strong>5</strong>
+          </div>
+          <div class="bar-track">
+            <div
+              class="bar-fill"
+              style="width:71.4%;background:#2f5d3a;"
+            ></div>
+          </div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-lab">
+            <span>Mengantuk</span>
+            <strong>6</strong>
+          </div>
+          <div class="bar-track">
+            <div
+              class="bar-fill"
+              style="width:85.7%;background:#b45309;"
+            ></div>
+          </div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-lab">
+            <span>Malas/kurang motivasi &amp; minat</span>
+            <strong>5</strong>
+          </div>
+          <div class="bar-track">
+            <div
+              class="bar-fill"
+              style="width:71.4%;background:#6b21a8;"
+            ></div>
+          </div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-lab">
+            <span>Terdistraksi HP/bermain</span>
+            <strong>4</strong>
+          </div>
+          <div class="bar-track">
+            <div
+              class="bar-fill"
+              style="width:57.1%;background:#0f766e;"
+            ></div>
+          </div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-lab">
+            <span>Mengobrol</span>
+            <strong>1</strong>
+          </div>
+          <div class="bar-track">
+            <div
+              class="bar-fill"
+              style="width:14.3%;background:#be185d;"
+            ></div>
+          </div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-lab">
+            <span>Kurangnya koneksi internet</span>
+            <strong>1</strong>
+          </div>
+          <div class="bar-track">
+            <div
+              class="bar-fill"
+              style="width:14.3%;background:#1d4ed8;"
+            ></div>
+          </div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-lab">
+            <span>Lingkungan kotor</span>
+            <strong>1</strong>
+          </div>
+          <div class="bar-track">
+            <div
+              class="bar-fill"
+              style="width:14.3%;background:#854d0e;"
+            ></div>
+          </div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-lab">
+            <span>Sulit menentukan produk</span>
+            <strong>1</strong>
+          </div>
+          <div class="bar-track">
+            <div
+              class="bar-fill"
+              style="width:14.3%;background:#365314;"
+            ></div>
+          </div>
+        </div>
+
+        <div class="bar-row">
+          <div class="bar-lab">
+            <span>Tidak sanggup</span>
+            <strong>1</strong>
+          </div>
+          <div class="bar-track">
+            <div
+              class="bar-fill"
+              style="width:14.3%;background:#4b5563;"
+            ></div>
+          </div>
+        </div>
+
+      </section>
+
+
+      <section>
+
+        <p class="nomor">
+          Solusi
+        </p>
+
+        <h2>
+          Cara mengatasi hambatan
+        </h2>
+
         <ol>
-          <li><strong>Kelelahan/capek:</strong> Beristirahat yang cukup dan mengatur waktu belajar dengan baik.</li>
-          <li><strong>Kesulitan memahami/mengerjakan tugas:</strong> Bertanya kepada guru atau teman dan mencari sumber belajar yang mudah dipahami.</li>
-          <li><strong>Kurangnya kerja sama kelompok:</strong> Membagi tugas secara adil dan saling membantu dalam kelompok.</li>
-          <li><strong>Mengantuk:</strong> Tidur yang cukup dan menjaga kondisi tubuh agar tetap bugar saat belajar.</li>
-          <li><strong>Malas/kurang motivasi &amp; minat:</strong> Menentukan tujuan belajar dan menggunakan metode pembelajaran yang lebih menarik.</li>
-          <li><strong>Terdistraksi HP/bermain:</strong> Menjauhkan HP atau menggunakannya hanya untuk keperluan pembelajaran.</li>
-          <li><strong>Mengobrol:</strong> Mengurangi percakapan yang tidak berkaitan dengan pembelajaran dan tetap fokus pada materi.</li>
-          <li><strong>Kurangnya koneksi internet:</strong> Menyiapkan materi atau sumber belajar yang dapat digunakan secara offline.</li>
-          <li><strong>Lingkungan kotor:</strong> Menjaga kebersihan lingkungan dan membersihkan tempat belajar bersama-sama.</li>
-          <li><strong>Sulit menentukan produk:</strong> Berdiskusi dengan kelompok dan memilih produk berdasarkan kemampuan serta sumber daya yang tersedia.</li>
-          <li><strong>Tidak sanggup:</strong> Meminta bantuan guru atau teman dan mengerjakan tugas secara bertahap.</li>
+
+          <li>
+            <strong>Kelelahan/capek:</strong>
+            Beristirahat yang cukup dan mengatur waktu belajar dengan baik.
+          </li>
+
+          <li>
+            <strong>Kesulitan memahami/mengerjakan tugas:</strong>
+            Bertanya kepada guru atau teman dan mencari sumber belajar
+            yang mudah dipahami.
+          </li>
+
+          <li>
+            <strong>Kurangnya kerja sama kelompok:</strong>
+            Membagi tugas secara adil dan saling membantu.
+          </li>
+
+          <li>
+            <strong>Mengantuk:</strong>
+            Tidur yang cukup dan menjaga kondisi tubuh.
+          </li>
+
+          <li>
+            <strong>Malas/kurang motivasi &amp; minat:</strong>
+            Menentukan tujuan belajar dan menggunakan metode
+            pembelajaran yang lebih menarik.
+          </li>
+
+          <li>
+            <strong>Terdistraksi HP/bermain:</strong>
+            Menjauhkan HP atau menggunakannya hanya
+            untuk keperluan pembelajaran.
+          </li>
+
+          <li>
+            <strong>Mengobrol:</strong>
+            Mengurangi percakapan yang tidak berkaitan
+            dengan pembelajaran.
+          </li>
+
+          <li>
+            <strong>Kurangnya koneksi internet:</strong>
+            Menyiapkan materi atau sumber belajar
+            yang dapat digunakan secara offline.
+          </li>
+
+          <li>
+            <strong>Lingkungan kotor:</strong>
+            Menjaga kebersihan lingkungan.
+          </li>
+
+          <li>
+            <strong>Sulit menentukan produk:</strong>
+            Berdiskusi dengan kelompok dan memilih produk
+            berdasarkan kemampuan serta sumber daya.
+          </li>
+
+          <li>
+            <strong>Tidak sanggup:</strong>
+            Meminta bantuan guru atau teman dan mengerjakan
+            tugas secara bertahap.
+          </li>
+
         </ol>
+
       </section>
 
-      <a class="kembali" href="#beranda" data-page="beranda">Kembali ke beranda</a>
+      <a
+        class="kembali"
+        href="#beranda"
+        data-page="beranda"
+      >
+        Kembali ke beranda
+      </a>
+
     </div>
 
-    <script>
+  </main>
+
+
+  <!-- ==================== JAVASCRIPT WEBSITE ==================== -->
+
+  <script>
     const pages = {
       beranda: document.getElementById("page-beranda"),
       materi: document.getElementById("page-materi"),
-      angket: document.getElementById("page-angket"),
-      asisten: document.getElementById("page-asisten")
+      angket: document.getElementById("page-angket")
     };
+
     const menuBg = document.getElementById("menuBg");
     const btnMenu = document.getElementById("btnMenu");
     const btnTutup = document.getElementById("btnTutup");
@@ -750,137 +1640,248 @@
     }
 
     function halamanDariHash() {
-      const hash = (location.hash || "#beranda").replace("#", "");
-      if (hash === "angket") return "angket";
-      if (hash === "asisten") return "asisten";
-      if (hash === "beranda" || hash === "") return "beranda";
+      const hash =
+        (location.hash || "#beranda").replace("#", "");
+
+      if (hash === "angket") {
+        return "angket";
+      }
+
+      if (
+        hash === "beranda" ||
+        hash === ""
+      ) {
+        return "beranda";
+      }
+
       return "materi";
     }
 
     function tampilkan(nama, geserKe) {
-      if (!pages[nama]) nama = "beranda";
+
+      if (!pages[nama]) {
+        nama = "beranda";
+      }
+
       Object.keys(pages).forEach((k) => {
-        if (pages[k]) pages[k].classList.toggle("on", k === nama);
+
+        if (pages[k]) {
+          pages[k].classList.toggle(
+            "on",
+            k === nama
+          );
+        }
+
       });
+
       bukaMenu(false);
+
       if (geserKe) {
-        const el = document.getElementById(geserKe);
+
+        const el =
+          document.getElementById(geserKe);
+
         if (el) {
-          requestAnimationFrame(() => el.scrollIntoView({ behavior: "smooth", block: "start" }));
+
+          requestAnimationFrame(() => {
+
+            el.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+
+          });
+
           return;
         }
       }
-      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
 
     function dariAlamat() {
-      const hash = (location.hash || "#beranda").replace("#", "");
-      const halaman = halamanDariHash();
-      const bagianDalam = ["cara", "k8b1", "k8b6", "k7bil", "k7pers", "k7band", "k7data", "k7bangun", "kuis"];
-      tampilkan(halaman, bagianDalam.indexOf(hash) >= 0 ? hash : null);
+
+      const hash =
+        (location.hash || "#beranda").replace("#", "");
+
+      const halaman =
+        halamanDariHash();
+
+      const bagianDalam = [
+        "cara",
+        "k8b1",
+        "k8b6",
+        "k7bil",
+        "k7pers",
+        "k7band",
+        "k7data",
+        "k7bangun",
+        "kuis"
+      ];
+
+      tampilkan(
+        halaman,
+        bagianDalam.includes(hash)
+          ? hash
+          : null
+      );
     }
 
-    btnMenu.addEventListener("click", () => bukaMenu(!menuBg.classList.contains("open")));
-    btnTutup.addEventListener("click", () => bukaMenu(false));
-    menuBg.addEventListener("click", (e) => {
-      if (e.target === menuBg) bukaMenu(false);
-    });
+    btnMenu.addEventListener(
+      "click",
+      () => {
+        bukaMenu(
+          !menuBg.classList.contains("open")
+        );
+      }
+    );
 
-    document.querySelectorAll("[data-page]").forEach((a) => {
-      a.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        const nama = a.getAttribute("data-page");
-        tampilkan(nama);
-        return false;
+    btnTutup.addEventListener(
+      "click",
+      () => bukaMenu(false)
+    );
+
+    menuBg.addEventListener(
+      "click",
+      (e) => {
+
+        if (e.target === menuBg) {
+          bukaMenu(false);
+        }
+
+      }
+    );
+
+    document
+      .querySelectorAll("[data-page]")
+      .forEach((a) => {
+
+        a.addEventListener(
+          "click",
+          (e) => {
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            const nama =
+              a.getAttribute("data-page");
+
+            tampilkan(nama);
+
+          }
+        );
+
       });
-    });
 
-    document.querySelectorAll(".chips a").forEach((a) => {
-      a.addEventListener("click", (e) => {
-        e.preventDefault();
-        const id = (a.getAttribute("href") || "").replace("#", "");
-        tampilkan("materi", id || null);
+    document
+      .querySelectorAll(".chips a")
+      .forEach((a) => {
+
+        a.addEventListener(
+          "click",
+          (e) => {
+
+            e.preventDefault();
+
+            const id =
+              (a.getAttribute("href") || "")
+              .replace("#", "");
+
+            tampilkan(
+              "materi",
+              id || null
+            );
+
+          }
+        );
+
       });
-    });
 
-    window.addEventListener("hashchange", dariAlamat);
+    window.addEventListener(
+      "hashchange",
+      dariAlamat
+    );
+
     dariAlamat();
   </script>
+
+
+  <!-- ==================== CHATBASE ==================== -->
+
   <script>
-(function () {
-  "use strict";
+    (function () {
 
-  const SITUS = [
-    { id: "judul", kunci: "judul karya proyek kokurikuler kokulikuler nama tema produk website infografis sekolah smp jakarta", teks: "Judul kokurikuler: Berfikir Kritis Melalui Pembelajaran Matematika dan PKN. Sekolah: SMP Negeri 165 Jakarta. Kelas 8E Kelompok 1. Tema: Peningkatan Proses Pembelajaran. Bentuk karya: website infografis 2D. Produk menjodohkan Matematika dengan Pendidikan Pancasila." },
-    { id: "anggota", kunci: "anggota kelompok ketua sekretaris nama siapa identitas", teks: "Anggota Kelompok 1 kelas 8E: Ketua Hamad Zaid Jessar. Sekretaris Nayyara Kimi Ayumi. Anggota: Calista Anatasya, Alicia Eleanor Amora, Hamizan Alvaro, dan Muhammad Alfatharrahman." },
-    { id: "layanan1", kunci: "layanan 1 satu pertama rangkuman infografis pembelajaran matematika pancasila kuis educaplay", teks: "Rangkuman Layanan 1: Pembelajaran dan Melatih Kemampuan Matematika dan Pendidikan Pancasila. Infografis dua sisi: kiri konsep Matematika, kanan nilai PKN. Materi kelas 8 Bab 1 aljabar dan Bab 6 peluang, plus kelas 7: bilangan bulat, persamaan linear, perbandingan, data dan diagram, bangun datar dan ruang. Ada kuis Educaplay untuk latihan menjodohkan." },
-    { id: "pasangan", kunci: "pasangan jodoh infografis cara baca", teks: "Cara baca infografis: aljabar dipasangkan dengan aturan yang bisa dicek; peluang dengan musyawarah berbasis data; bilangan bulat dengan hak dan kewajiban; persamaan dengan keadilan; perbandingan dengan pembagian proporsional; data dengan keputusan berdasarkan fakta; bangun dengan fasilitas milik bersama." },
-    { id: "aljabar", kunci: "aljabar variabel suku menyederhanakan bab 1", teks: "Kelas 8 Bab 1 aljabar: huruf mewakili nilai (variabel). Contoh 3x + 2x + 5 = 5x + 5. Jumlah sapu 4x + 5. Pasangan PKN: tata tertib harus jelas. Sila ke-5 menuntut keadilan yang dapat dijelaskan." },
-    { id: "peluang", kunci: "peluang probabilitas bab 6 sampel hampir semua", teks: "Kelas 8 Bab 6 peluang = banyak hasil dimaksud / banyak semua hasil. Contoh 3/10. Angka itu belum boleh jadi klaim hampir seluruh kelas setuju. Pasangan PKN: musyawarah sila ke-4 butuh data, bukan desas-desus." },
-    { id: "bulat", kunci: "bilangan bulat positif negatif kas kelas", teks: "Kelas 7 bilangan bulat: (+7)+(-7)=0. Kas masuk lalu keluar jumlah yang sama kembali seimbang. Pasangan PKN: hak dan kewajiban berjalan berpasangan." },
-    { id: "persamaan", kunci: "persamaan linear ruas adil piket", teks: "Kelas 7 persamaan linear: kedua ruas harus sama. x+4=10 jadi x=6. Enam kelompok membagi 24 tugas: 6x=24, x=4. Pasangan PKN: keadilan sosial harus dapat dihitung." },
-    { id: "banding", kunci: "perbandingan rasio proporsional senilai berbalik gotong royong", teks: "Kelas 7 perbandingan: 2:3=8:12. 2 guru untuk 3 kelompok, 6 kelompok perlu 4 guru. Pasangan PKN: pembagian kerja bakti harus proporsional." },
-    { id: "data", kunci: "data diagram batang mading fakta suara", teks: "Kelas 7 data: Mading Pancasila 12, kerja bakti 8, pidato 5, jumlah 25. Grafik harus sesuai tabel. Pasangan PKN: keputusan memakai data lalu tetap menghargai yang kalah jumlah." },
-    { id: "bangun", kunci: "bangun luas volume balok fasilitas pojok baca", teks: "Kelas 7 bangun: luas persegi panjang = p x l. Volume balok = p x l x t. Pojok baca 3 m x 2 m = 6 m2. Sekolah ruang bersama." },
-    { id: "kuis", kunci: "kuis educaplay latihan matching", teks: "Kuis Educaplay ada di halaman materi bagian Kuis. Dipakai setelah membaca infografis untuk menjodohkan soal dan jawaban." },
-    { id: "layanan2", kunci: "layanan 2 dua kedua rangkuman angket hambatan presensi 32", teks: "Rangkuman Layanan 2: Data Angket Penghambat Proses Pembelajaran. Presensi kelas 8E, 9 September 2026, 32 siswa. Satu siswa boleh menulis lebih dari satu hambatan. Paling banyak: kesulitan tugas 7, mengantuk 6, kelelahan 5, kurang kerja sama 5, kurang motivasi 5, HP 4, lalu mengobrol, internet, kotor, sulit produk, dan tidak sanggup masing-masing 1." },
-    { id: "solusi", kunci: "solusi mengatasi masalah permasalahan hambatan angket", teks: "Solusi angket: 1 Kelelahan: istirahat cukup. 2 Kesulitan tugas: tanya guru atau teman. 3 Kurang kerja sama: bagi tugas adil. 4 Mengantuk: tidur cukup. 5 Kurang motivasi: tentukan tujuan belajar. 6 HP: jauhkan atau pakai untuk belajar. 7 Mengobrol: fokus ke materi. 8 Internet: siapkan materi luring. 9 Lingkungan kotor: bersih bersama. 10 Sulit produk: diskusi kelompok. 11 Tidak sanggup: minta bantuan dan kerjakan bertahap." },
-    { id: "kritis", kunci: "berfikir berpikir kritis", teks: "Berfikir kritis di website ini: jangan langsung percaya klaim. Cek data, hitung dulu, bandingkan dua sisi, lalu putuskan." }
-  ];
+      if (
+        !window.chatbase ||
+        window.chatbase("getState") !== "initialized"
+      ) {
 
-  function bersihkan(teks) {
-    return (teks || "")
-      .toLowerCase()
-      .replace(/ke\s*-\s*1/g, " layanan 1 ")
-      .replace(/ke\s*-\s*2/g, " layanan 2 ")
-      .replace(/ke\s+1\b/g, " layanan 1 ")
-      .replace(/ke\s+2\b/g, " layanan 2 ")
-      .replace(/\bpertama\b/g, " 1 ")
-      .replace(/\bkedua\b/g, " 2 ")
-      .replace(/[^\p{L}\p{N}\s]+/gu, " ")
-      .replace(/\s+/g, " ")
-      .trim();
-  }
+        window.chatbase = (...arguments) => {
 
-  function kataDasar(kata) {
-    return (kata || "").replace(/(nya|kah|pun)$/g, "");
-  }
+          if (!window.chatbase.q) {
+            window.chatbase.q = [];
+          }
 
-  function kataTanya(teks) {
-    return bersihkan(teks).split(" ").map(kataDasar).filter(function (w) {
-      return w.length >= 2 || w === "1" || w === "2";
-    });
-  }
+          window.chatbase.q.push(arguments);
+        };
 
-  function skorBagian(pertanyaan, bagian) {
-    const words = kataTanya(pertanyaan);
-    const kunciWords = " " + bersihkan(bagian.kunci).split(" ").map(kataDasar).join(" ") + " ";
-    const teksWords = " " + bersihkan(bagian.teks).split(" ").map(kataDasar).join(" ") + " ";
-    let s = 0;
-    words.forEach(function (w) {
-      if (w === "1" || w === "2") {
-        if (kunciWords.indexOf(" " + w + " ") >= 0) s += 12;
-        return;
+        window.chatbase =
+          new Proxy(window.chatbase, {
+
+            get(target, prop) {
+
+              if (prop === "q") {
+                return target.q;
+              }
+
+              return (...args) =>
+                target(prop, ...args);
+
+            }
+
+          });
+
       }
-      if (w.length < 4) return;
-      if (kunciWords.indexOf(" " + w + " ") >= 0) s += 6;
-      else if (teksWords.indexOf(" " + w + " ") >= 0) s += 1;
-    });
-    return s;
-  }
 
-  function jawabanLokal(pertanyaan) {
-    const p = bersihkan(pertanyaan);
-    if (!p) return "Tulis pertanyaannya dulu.";
-    if (/^(halo|hai|hi|hello|selamat|assalam)/.test(p)) {
-      return "Halo! Aku AI Copilot. Aku membaca isi website ini. Tanyakan judul, anggota, rangkuman layanan 1, layanan 2, atau materi Matematika dan PKN.";
-    }
-    const urut = SITUS.map(function (b) { return { b: b, s: skorBagian(pertanyaan, b) }; }).sort(function (a, c) { return c.s - a.s; });
-    if (!urut[0] || urut[0].s < 2) return "";
-    return urut[0].b.teks;
+      const onLoad = function () {
+
+        const script =
+          document.createElement("script");
+
+        script.src =
+          "https://www.chatbase.co/embed.min.js";
+
+        script.id =
+          "aoEbBz-7v-2MWzplQ4Yt-";
+
+        script.domain =
+          "www.chatbase.co";
+
+        document.body.appendChild(script);
+
+      };
+
+      if (
+        document.readyState === "complete"
+      ) {
+
+        onLoad();
+
+      } else {
+
+        window.addEventListener(
+          "load",
+          onLoad
+        );
+
+      }
+
+    })();
+  </script>
 
 </body>
-<script>
-(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="aoEbBz-7v-2MWzplQ4Yt-";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
-</script>
+</html>
+```
