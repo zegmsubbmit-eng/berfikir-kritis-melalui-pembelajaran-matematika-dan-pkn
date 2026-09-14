@@ -879,7 +879,6 @@
     const urut = SITUS.map(function (b) { return { b: b, s: skorBagian(pertanyaan, b) }; }).sort(function (a, c) { return c.s - a.s; });
     if (!urut[0] || urut[0].s < 2) return "";
     return urut[0].b.teks;
-  }
 
 </body>
 <script>
