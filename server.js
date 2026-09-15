@@ -1,123 +1,110 @@
-<script>
-(function () {
-  const toggle = document.getElementById("aicToggle");
-  const panel = document.getElementById("aicPanel");
-  const closeBtn = document.getElementById("aicClose");
-  const form = document.getElementById("aicForm");
-  const input = document.getElementById("aicInput");
-  const log = document.getElementById("aicLog");
-  const chips = document.querySelectorAll(".aic-chips button");
+const express = require("express");
+const OpenAI = require("openai");
+const fs = require("fs");
+const path = require("path");
 
-  if (!toggle || !panel || !closeBtn || !form || !input || !log) {
-    console.error("AI Copilot: elemen HTML tidak ditemukan.");
-    return;
-  }
+const app = express();
 
-  function openCopilot() {
-    panel.classList.add("open");
-    toggle.classList.add("open");
-    input.focus();
-  }
+const PORT = process.env.PORT || 10000;
 
-  function closeCopilot() {
-    panel.classList.remove("open");
-    toggle.classList.remove("open");
-  }
+const client = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
+});
 
-  function addMessage(text, type) {
-    const message = document.createElement("div");
-    message.className = "aic-msg " + type;
-    message.textContent = text;
-    log.appendChild(message);
-    log.scrollTop = log.scrollHeight;
-    return message;
-  }
+app.use(express.json());
 
-  function addLoading() {
-    const message = document.createElement("div");
-    message.className = "aic-msg bot pending";
-    message.innerHTML =
-      'Sedang berpikir <span class="aic-dots">' +
-      '<span></span><span></span><span></span>' +
-      '</span>';
+/*
+  Knowledge base
+  Dibaca dari ai-knowledge.html.
+*/
+const knowledgePath = path.join(__dirname, "ai-knowledge.html");
 
-    log.appendChild(message);
-    log.scrollTop = log.scrollHeight;
-    return message;
-  }
+let knowledge = "";
 
-  async function sendMessage(message) {
-    message = message.trim();
+if (fs.existsSync(knowledgePath)) {
+  knowledge = fs.readFileSync(knowledgePath, "utf8");
+}
 
-    if (!message) return;
+/*
+  Health check
+  Untuk mengecek apakah backend hidup.
+*/
+app.get("/", function (req, res) {
+  res.json({
+    status: "ok",
+    service: "AI Copilot Backend"
+  });
+});
 
-    addMessage(message, "user");
-    input.value = "";
-    input.disabled = true;
+/*
+  Endpoint AI Copilot
+*/
+app.post("/api/chat", async function (req, res) {
+  try {
+    const message = String(req.body.message || "").trim();
 
-    const loading = addLoading();
-
-    try {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          message: message
-        })
+    if (!message) {
+      return res.status(400).json({
+        error: "Pesan kosong."
       });
-
-      const data = await response.json();
-
-      loading.remove();
-
-      if (!response.ok) {
-        throw new Error(data.error || "Terjadi kesalahan pada server.");
-      }
-
-      addMessage(
-        data.answer || "AI Copilot tidak memberikan jawaban.",
-        "bot"
-      );
-
-    } catch (error) {
-      loading.remove();
-
-      addMessage(
-        "Maaf, AI Copilot belum dapat terhubung ke server.",
-        "bot"
-      );
-
-      console.error("AI Copilot error:", error);
-
-    } finally {
-      input.disabled = false;
-      input.focus();
     }
-  }
 
-  toggle.addEventListener("click", function () {
-    if (panel.classList.contains("open")) {
-      closeCopilot();
-    } else {
-      openCopilot();
+    if (!process.env.OPENAI_API_KEY) {
+      console.error("OPENAI_API_KEY belum tersedia.");
+
+      return res.status(500).json({
+        error: "API key belum dikonfigurasi di server."
+      });
     }
-  });
 
-  closeBtn.addEventListener("click", closeCopilot);
+    const response = await client.responses.create({
+      model: "gpt-5.6-luna",
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault();
-    sendMessage(input.value);
-  });
+      instructions: `
+Kamu adalah AI Copilot untuk website:
 
-  chips.forEach(function (chip) {
-    chip.addEventListener("click", function () {
-      const message = chip.textContent.trim();
-      sendMessage(message);
+"Layanan Interaktif Gabungan Matematika dan PKN untuk Melatih Berfikir Kritis Murid"
+
+Website ini dibuat oleh siswa kelas 8E Kelompok 1.
+
+Tugas kamu:
+- Membantu siswa memahami isi website.
+- Menjawab pertanyaan tentang proyek, Matematika, PKN, layanan interaktif, angket, dan solusi yang tersedia.
+- Gunakan bahasa Indonesia.
+- Gunakan bahasa yang mudah dipahami siswa SMP kelas 8.
+- Jawab secara jelas dan tidak terlalu panjang.
+- Jangan mengarang informasi tentang website.
+- Jika informasi yang ditanyakan tidak tersedia dalam knowledge base, katakan bahwa informasi tersebut belum tersedia.
+- Jangan mengaku sebagai Chatbase.
+- Nama kamu adalah AI Copilot.
+
+KNOWLEDGE BASE:
+${knowledge}
+`,
+
+      input: message
     });
-  });
 
-})();
-</script>
+    const answer =
+      response.output_text ||
+      "Maaf, AI Copilot belum mendapatkan jawaban.";
+
+    res.json({
+      answer: answer
+    });
+
+  } catch (error) {
+    console.error("AI Copilot error:", error);
+
+    res.status(500).json({
+      error: "AI Copilot sedang mengalami masalah."
+    });
+  }
+});
+
+/*
+  Render harus menerima koneksi pada 0.0.0.0.
+*/
+app.listen(PORT, "0.0.0.0", function () {
+  console.log(`AI Copilot backend berjalan pada port ${PORT}`);
+});
