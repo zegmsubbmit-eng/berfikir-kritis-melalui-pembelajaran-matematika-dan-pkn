@@ -1,67 +1,123 @@
-const express = require("express");
-const OpenAI = require("openai");
-const fs = require("fs");
+<script>
+(function () {
+  const toggle = document.getElementById("aicToggle");
+  const panel = document.getElementById("aicPanel");
+  const closeBtn = document.getElementById("aicClose");
+  const form = document.getElementById("aicForm");
+  const input = document.getElementById("aicInput");
+  const log = document.getElementById("aicLog");
+  const chips = document.querySelectorAll(".aic-chips button");
 
-const app = express();
-const port = process.env.PORT || 3000;
-
-const client = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
-
-app.use(express.json());
-app.use(express.static("."));
-
-const knowledge = fs.existsSync("ai-knowledge.html")
-  ? fs.readFileSync("ai-knowledge.html", "utf8")
-  : "";
-
-app.post("/api/chat", async (req, res) => {
-  try {
-    const message = String(req.body.message || "").trim();
-
-    if (!message) {
-      return res.status(400).json({
-        error: "Pesan kosong."
-      });
-    }
-
-    const response = await client.responses.create({
-      model: "gpt-5.6-luna",
-      instructions: `
-Kamu adalah AI Copilot untuk website
-"Layanan Interaktif Gabungan Matematika dan PKN untuk Melatih Berfikir Kritis Murid".
-
-Jawab dalam bahasa Indonesia yang jelas dan sesuai tingkat siswa SMP kelas 8.
-
-Gunakan informasi dari knowledge base di bawah ini sebagai sumber utama.
-Jangan mengarang data tentang website, kelompok, materi, atau hasil angket.
-
-KNOWLEDGE BASE:
-${knowledge}
-
-Jika informasi tidak ditemukan dalam knowledge base,
-katakan bahwa informasi tersebut belum tersedia di website.
-
-Jangan mengaku sebagai Chatbase.
-Nama kamu adalah AI Copilot.
-`,
-      input: message
-    });
-
-    res.json({
-      answer: response.output_text
-    });
-
-  } catch (error) {
-    console.error(error);
-
-    res.status(500).json({
-      error: "AI Copilot sedang mengalami masalah."
-    });
+  if (!toggle || !panel || !closeBtn || !form || !input || !log) {
+    console.error("AI Copilot: elemen HTML tidak ditemukan.");
+    return;
   }
-});
 
-app.listen(port, () => {
-  console.log(`AI Copilot berjalan di http://localhost:${port}`);
-});
+  function openCopilot() {
+    panel.classList.add("open");
+    toggle.classList.add("open");
+    input.focus();
+  }
+
+  function closeCopilot() {
+    panel.classList.remove("open");
+    toggle.classList.remove("open");
+  }
+
+  function addMessage(text, type) {
+    const message = document.createElement("div");
+    message.className = "aic-msg " + type;
+    message.textContent = text;
+    log.appendChild(message);
+    log.scrollTop = log.scrollHeight;
+    return message;
+  }
+
+  function addLoading() {
+    const message = document.createElement("div");
+    message.className = "aic-msg bot pending";
+    message.innerHTML =
+      'Sedang berpikir <span class="aic-dots">' +
+      '<span></span><span></span><span></span>' +
+      '</span>';
+
+    log.appendChild(message);
+    log.scrollTop = log.scrollHeight;
+    return message;
+  }
+
+  async function sendMessage(message) {
+    message = message.trim();
+
+    if (!message) return;
+
+    addMessage(message, "user");
+    input.value = "";
+    input.disabled = true;
+
+    const loading = addLoading();
+
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          message: message
+        })
+      });
+
+      const data = await response.json();
+
+      loading.remove();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Terjadi kesalahan pada server.");
+      }
+
+      addMessage(
+        data.answer || "AI Copilot tidak memberikan jawaban.",
+        "bot"
+      );
+
+    } catch (error) {
+      loading.remove();
+
+      addMessage(
+        "Maaf, AI Copilot belum dapat terhubung ke server.",
+        "bot"
+      );
+
+      console.error("AI Copilot error:", error);
+
+    } finally {
+      input.disabled = false;
+      input.focus();
+    }
+  }
+
+  toggle.addEventListener("click", function () {
+    if (panel.classList.contains("open")) {
+      closeCopilot();
+    } else {
+      openCopilot();
+    }
+  });
+
+  closeBtn.addEventListener("click", closeCopilot);
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    sendMessage(input.value);
+  });
+
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      const message = chip.textContent.trim();
+      sendMessage(message);
+    });
+  });
+
+})();
+</script>
