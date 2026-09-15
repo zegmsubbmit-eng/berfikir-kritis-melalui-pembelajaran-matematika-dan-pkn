@@ -876,10 +876,11 @@
     if (/^(halo|hai|hi|hello|selamat|assalam)/.test(p)) {
       return "Halo! Aku AI Copilot. Aku membaca isi website ini. Tanyakan judul, anggota, rangkuman layanan 1, layanan 2, atau materi Matematika dan PKN.";
     }
-    const urut = SITUS.map(function (b) { return { b: b, s: skorBagian(pertanyaan, b) }; }).sort(function (a, c) { return c.s - a.s; });
-    if (!urut[0] || urut[0].s < 2) return "";
-    return urut[0].b.teks;
-
+function jawabanLokal(pertanyaan) {
+  // ...
+  if (!urut[0] || urut[0].s < 2) return "";
+  return urut[0].b.teks;
+}
 </body>
 <script>
 
