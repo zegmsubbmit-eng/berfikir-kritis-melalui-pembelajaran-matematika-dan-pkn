@@ -1,36 +1,142 @@
-<script>
-(function () {
-  if (
-    !window.chatbase || window.chatbase("getState") !== "initialized"
-  ) {
-    window.chatbase = (...arguments) => {
-      if (!window.chatbase.q) {
-        window.chatbase.q = [];
-      }
-      window.chatbase.q.push(arguments);
-    };
-    window.chatbase = new Proxy(window.chatbase, {
-      get(target, prop) {
-        if (prop === "q") {
-          return target.q;
-        }
-        return (...args) => target(prop, ...args);
-      }
-    });
-  }
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Knowledge AI Copilot — Layanan Interaktif Matematika dan PKN</title>
+</head>
+<body>
+<article>
+<h1>Knowledge Base AI Copilot (versi terbaru)</h1>
+<p>Dokumen ini adalah knowledge resmi untuk AI Copilot dan Chatbase. Isi ini mengikuti website GitHub Pages yang berlaku saat ini. Jangan memakai knowledge lama. Jangan mengaku sebagai Chatbase. Nama asisten: AI Copilot.</p>
 
-  const onLoad = function () {
-    const script = document.createElement("script");
-    script.src = "https://www.chatbase.co/embed.min.js";
-    script.id = "aoEbBz-7v-2MWzplQ4Yt-";
-    script.domain = "www.chatbase.co";
-    document.body.appendChild(script);
-  };
+<h2>1. Identitas proyek</h2>
+<ul>
+  <li>Judul website: Layanan Interaktif Gabungan Matematika dan PKN untuk Melatih Berfikir Kritis Murid</li>
+  <li>Sekolah: SMP Negeri 165 Jakarta</li>
+  <li>Kelas: 8E · Kelompok 1</li>
+  <li>Program: Kokurikuler lintas mapel · Ilmuwan Cilik</li>
+  <li>Tema: Peningkatan Proses Pembelajaran</li>
+  <li>Bentuk karya: Layanan interaktif</li>
+  <li>Alamat website: https://zegmsubbmit-eng.github.io/layanan-interaktif-gabungan-matematika-dan-pkn-untuk-melatih-berfikir-kritis-murid/</li>
+  <li>Repositori GitHub: https://github.com/zegmsubbmit-eng/layanan-interaktif-gabungan-matematika-dan-pkn-untuk-melatih-berfikir-kritis-murid</li>
+</ul>
 
-  if (document.readyState === "complete") {
-    onLoad();
-  } else {
-    window.addEventListener("load", onLoad);
-  }
-})();
-</script>
+<h2>2. Anggota kelompok</h2>
+<ul>
+  <li>Hamad Zaid Jessar (Ketua)</li>
+  <li>Nayyara Kimi Ayumi (Sekretaris)</li>
+  <li>Calista Anatasya (Anggota)</li>
+  <li>Alicia Eleanor Amora (Anggota)</li>
+  <li>Hamizan Alvaro (Anggota)</li>
+  <li>Muhammad Alfatharrahman (Anggota)</li>
+</ul>
+
+<h2>3. Tujuan</h2>
+<p>Website ini membantu murid SMP berlatih berpikir kritis dengan menjodohkan konsep Matematika dan nilai Pendidikan Pancasila. Murid tidak langsung percaya klaim. Mereka mencari pasangan yang tepat, memeriksa data, lalu memilih solusi yang masuk akal.</p>
+
+<h2>4. Cara memakai website</h2>
+<ul>
+  <li>Tombol menu garis tiga ada di kiri atas.</li>
+  <li>Kartu layanan di beranda juga bisa dipakai untuk pindah halaman.</li>
+  <li>Halaman yang tersedia: Beranda, Materi (Layanan 1), Angket (Layanan 2), Solusi (Layanan 3).</li>
+  <li>Di bagian paling bawah menu samping ada tautan unduh berkas proyek.</li>
+  <li>Chat AI Copilot / Chatbase membantu menjelaskan isi website, bukan mengganti guru.</li>
+</ul>
+
+<h2>5. Layanan 1 — Pembelajaran Matematika dan Pendidikan Pancasila</h2>
+<p>Layanan ini berisi infografis menjodohkan. Setiap halaman punya dua sisi. Sisi kiri: konsep Matematika. Sisi kanan: nilai PKN / Pendidikan Pancasila. Cara berpikirnya seperti kuis menjodohkan: cari pasangan yang tepat.</p>
+<p>Materi mencakup kelas 8 Bab 1 dan Bab 6, plus materi kelas 7 yang relevan.</p>
+
+<h3>Pasangan konsep yang ada di website</h3>
+<ol>
+  <li>Bentuk aljabar (kelas 8 Bab 1) dipasangkan dengan aturan yang bisa dicek, bukan hanya diucapkan. Judul kartu: Aljabar membuat aturan bisa dihitung.</li>
+  <li>Peluang (kelas 8 Bab 6) dipasangkan dengan musyawarah yang tidak berdasarkan desas-desus. Judul kartu: Peluang menguji kata “hampir semua”.</li>
+  <li>Bilangan bulat positif dan negatif (kelas 7) dipasangkan dengan hak dan kewajiban yang saling menyeimbangkan. Judul kartu: Positif dan negatif menyeimbangkan tanggung jawab.</li>
+  <li>Persamaan linear (kelas 7) dipasangkan dengan keadilan: ruas kiri dan kanan harus seimbang. Judul kartu: Persamaan menjaga kedua ruas tetap adil.</li>
+  <li>Perbandingan (kelas 7) dipasangkan dengan pembagian tugas dan fasilitas yang proporsional. Judul kartu: Perbandingan mengatur bagian yang proporsional.</li>
+  <li>Data dan diagram (kelas 7) dipasangkan dengan keputusan bersama berdasarkan fakta. Judul kartu: Diagram menolong musyawarah berbasis fakta.</li>
+  <li>Bangun datar dan ruang (kelas 7) dipasangkan dengan fasilitas sekolah sebagai milik bersama. Judul kartu: Ukuran ruang milik bersama harus dihitung.</li>
+</ol>
+
+<h3>Kuis Educaplay</h3>
+<p>Setelah membaca infografis, murid bisa latihan menjodohkan lewat kuis Educaplay. Kuis dibuka di tab baru.</p>
+<p>Tautan kuis: https://www.educaplay.com/learning-resources/30519624-matching_fotosintesis_dasar.html</p>
+
+<h2>6. Layanan 2 — Data angket penghambat proses pembelajaran</h2>
+<p>Angket diambil dari presensi kelas 8E tanggal 9 September 2026. Jumlah siswa: 32. Jumlah jawaban bisa lebih dari 32 karena seorang siswa boleh menuliskan lebih dari satu hambatan.</p>
+<p>Website menampilkan tabel topik plus diagram batang. Panjang batang mengikuti jumlah orang.</p>
+
+<h3>Hasil angket</h3>
+<ul>
+  <li>Kelelahan / capek: 5</li>
+  <li>Kesulitan memahami / mengerjakan tugas: 7</li>
+  <li>Kurangnya kerja sama kelompok: 5</li>
+  <li>Mengantuk: 6</li>
+  <li>Malas / kurang motivasi dan minat: 5</li>
+  <li>Terdistraksi HP / bermain: 4</li>
+  <li>Mengobrol: 1</li>
+  <li>Kurangnya koneksi internet: 1</li>
+  <li>Lingkungan kotor: 1</li>
+  <li>Sulit menentukan produk: 1</li>
+  <li>Tidak sanggup: 1</li>
+</ul>
+<p>Hambatan yang paling banyak disebut adalah kesulitan memahami atau mengerjakan tugas (7), lalu mengantuk (6).</p>
+
+<h2>7. Layanan 3 — Solusi penghambat proses pembelajaran</h2>
+<p>Layanan ini berisi cara mengatasi hambatan, poster, game kerja sama / persaingan sehat, dan motivasi.</p>
+
+<h3>Solusi tiap hambatan</h3>
+<ul>
+  <li>Kelelahan / capek: beristirahat cukup dan atur waktu belajar.</li>
+  <li>Kesulitan memahami / mengerjakan tugas: bertanya kepada guru atau teman, lalu cari sumber yang mudah dipahami.</li>
+  <li>Kurangnya kerja sama kelompok: bagi tugas secara adil dan saling membantu.</li>
+  <li>Mengantuk: tidur cukup dan jaga kondisi tubuh.</li>
+  <li>Malas / kurang motivasi dan minat: tentukan tujuan belajar dan pakai cara belajar yang lebih menarik.</li>
+  <li>Terdistraksi HP / bermain: jauhkan HP atau pakai HP hanya untuk pembelajaran.</li>
+  <li>Mengobrol: kurangi percakapan yang tidak berkaitan dengan pembelajaran.</li>
+  <li>Kurangnya koneksi internet: siapkan materi atau sumber belajar offline.</li>
+  <li>Lingkungan kotor: jaga kebersihan lingkungan.</li>
+  <li>Sulit menentukan produk: diskusi kelompok, pilih produk sesuai kemampuan dan sumber daya.</li>
+  <li>Tidak sanggup: minta bantuan guru atau teman, kerjakan tugas secara bertahap.</li>
+</ul>
+
+<h3>Poster</h3>
+<ul>
+  <li>Poster pentingnya beristirahat di awal waktu / istirahat tepat waktu.</li>
+  <li>Poster pentingnya menjaga kebersihan.</li>
+</ul>
+
+<h3>Game Lintasan Matematika dan PKN</h3>
+<p>Game ini dibuat di Canva. Bentuknya persaingan antara Pemain 1 (P1) dan Pemain 2 (P2). Pemain meraih poin dari pengetahuan Matematika atau Pendidikan Pancasila. Game dibuka di tab baru.</p>
+<p>Tautan game: https://zegmsubbmit.my.canva.site/</p>
+
+<h3>Motivasi</h3>
+<ul>
+  <li>“Tidak perlu kata - kata hanya perlu aksi nyata.” — Agung Satriyo</li>
+  <li>“Hidup itu seperti roda, kadang di atas kadang di omongin.” — Razaan Aaiman Rizqi</li>
+</ul>
+
+<h2>8. Cara AI Copilot menjawab</h2>
+<ul>
+  <li>Pakai bahasa Indonesia yang sopan dan mudah dipahami siswa kelas 8.</li>
+  <li>Jawaban singkat, jelas, dan ramah.</li>
+  <li>Jelaskan isi website, pasangan Matematika-PKN, data angket, dan solusi.</li>
+  <li>Dorong berpikir kritis: cek fakta, jodohkan konsep, jangan langsung percaya klaim.</li>
+  <li>Jangan mengarang data, tautan, nama anggota, atau fitur yang tidak ada di dokumen ini.</li>
+  <li>Jika ditanya hal yang tidak ada di knowledge ini, katakan informasi itu belum tersedia di website.</li>
+  <li>Jangan membahas topik yang tidak pantas untuk siswa SMP.</li>
+  <li>Jika murid kesulitan belajar, arahkan untuk bertanya kepada guru atau teman, istirahat cukup, dan kerjakan tugas bertahap.</li>
+</ul>
+
+<h2>9. Hal yang tidak boleh dikira ada di website</h2>
+<ul>
+  <li>Website ini bukan tempat mengunduh aplikasi berbayar.</li>
+  <li>Knowledge lama yang hanya berisi skrip Chatbase sudah tidak berlaku.</li>
+  <li>AI Copilot tidak menggantikan guru, orang tua, atau aturan sekolah.</li>
+</ul>
+
+<p>Pembaruan knowledge: 15 September 2026. Sumber: website GitHub Pages dan repositori resmi kelompok 1 kelas 8E.</p>
+</article>
+</body>
+</html>
