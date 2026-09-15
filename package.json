@@ -1,0 +1,13 @@
+{
+  "name": "ai-copilot-website",
+  "version": "1.0.0",
+  "description": "AI Copilot untuk layanan interaktif kelas 8E",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "openai": "^5.0.0"
+  }
+}
